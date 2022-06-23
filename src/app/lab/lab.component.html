@@ -1,0 +1,16 @@
+<div>
+    <div  [ngClass]="{green : task.isCompleted}" *ngFor="let task of taskList; let i = index">
+        
+       <p>{{task.name}}</p>
+      
+        <button (click)="markAsCompleted(i)">Marcar como completada</button>
+        <button (click)="markAsPostponed(i)">Marcar como pospuesta</button>
+        <button (click)="removeTask(i)">Eliminar</button></div>
+    
+    
+    <button (click)="removeAllCompleted()">Eliminar todas tareas completadas</button>
+    <button (click)="showAll()">Mostrar todas</button>
+</div>
+
+<input type="text" placeholder="" [(ngModel)] = "name">
+<button (click)="addTask()">Añadir tarea</button>
